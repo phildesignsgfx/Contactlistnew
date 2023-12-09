@@ -20,10 +20,10 @@ export function contactActions(getStore, getActions, setStore) {
             });
             return store.contactList;
         },
-        editContact: (index, nombre) => {
+        editContact: (index, name) => {
             let store = getStore();
             let arrTemp = store.contactList.slice();
-            arrTemp[index]["full_name"] = nombre;
+            arrTemp[index]["full_name"] = name;
             setStore({
                 ...store,
                 contactList: arrTemp,
