@@ -1,5 +1,5 @@
 export const contactStore = {
-    ContactList: [{
+    contactList: [{
         full_name: "Dave Bradley",
         email: "dave@gmail.com",
         address: "47568 NW 34ST, 33434 FL, USA",
@@ -12,31 +12,31 @@ export function contactActions(getStore, getActions, setStore) {
     return {
         addContact: async (obj) => {
             let store = getStore();
-            let arrTemp = store.ContactList.slice();
+            let arrTemp = store.contactList.slice();
             arrTemp.push(obj);
             setStore({
                 ...store,
-                ContactList: arrTemp,
+                contactList: arrTemp,
             });
-            return store.ContactList;
+            return store.contactList;
         },
         editContact: (index, nombre) => {
             let store = getStore();
-            let arrTemp = store.ContactList.slice();
+            let arrTemp = store.contactList.slice();
             arrTemp[index]["full_name"] = nombre;
             setStore({
                 ...store,
-                ContactList: arrTemp,
+                contactList: arrTemp,
             });
         },
         deleteContact: (indice) => {
             let store = getStore();
-            let arrTemp = store.ContactList.filter((item, index) => {
+            let arrTemp = store.contactList.filter((item, index) => {
                 return index != indice;
             });
             setStore({
                 ...store,
-                ContactList: arrTemp,
+                contactList: arrTemp,
             });
         },
     };

@@ -12,11 +12,11 @@ const Contacts = () => {
     email: "",
   });
 
-  useEffect(() => {}, [store.ContactList, editedContact]);
+  useEffect(() => {}, [store.contactList, editedContact]);
 
   const handleEditContact = (index) => {
     setEditingIndex(index);
-    const { full_name, address, phone, email } = store.ContactList[index];
+    const { full_name, address, phone, email } = store.contactList[index];
     setEditedContact({ full_name, address, phone, email });
   };
 
@@ -51,9 +51,9 @@ const Contacts = () => {
 
       <div className="card m-5">
         <ul className="list-group list-group-flush">
-          {store.ContactList && store.ContactList.length > 0 ? (
+          {store.contactList && store.contactList.length > 0 ? (
             <>
-              {store.ContactList.map((item, index) => {
+              {store.contactList.map((item, index) => {
                 const isEditing = editingIndex === index;
 
                 return (
